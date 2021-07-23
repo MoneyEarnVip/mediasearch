@@ -279,7 +279,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             for files in filedetails:
                 file_caption = files.file_name
                 size=files.file_size
-                caption = files.caption + sample_msg
+                caption = files.file_caption + sample_msg
                 if caption is None:
                     caption = caption = files.file_name + sample_msg
                 buttons = [
