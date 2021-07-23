@@ -11,6 +11,13 @@ from info import CACHE_TIME, AUTH_USERS, AUTH_CHANNEL
 logger = logging.getLogger(__name__)
 cache_time = 0 if AUTH_USERS or AUTH_CHANNEL else CACHE_TIME
 
+sample_msg = f"""
+
+〽️ Powered By @T2Links
+
+Share and Support us❤️
+🎯 Join Now ☞ [Tamil Hd Movies](t.me/tamil_latest_films)
+"""  
 
 @Client.on_inline_query(filters.user(AUTH_USERS) if AUTH_USERS else None)
 async def answer(bot, query):
@@ -40,14 +47,14 @@ async def answer(bot, query):
                                                   offset=offset)
 
     for file in files:
-        caption=file.caption
+        caption=file.file_name + sample_msg
         if caption is None:
-            caption = f"{file.file_name}"
+            caption = file.file_name + sample_msg"
         results.append(
             InlineQueryResultCachedDocument(
                 title=file.file_name,
                 file_id=file.file_id,
-                caption=caption,
+                caption=file.file_name + sample_msg,
                 description=f'Size: {get_size(file.file_size)}\nType: {file.file_type}',
                 reply_markup=reply_markup))
 
