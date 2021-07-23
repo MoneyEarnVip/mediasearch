@@ -7,6 +7,14 @@ from utils import Media, get_file_details
 from pyrogram.errors import UserNotParticipant
 logger = logging.getLogger(__name__)
 
+sample_msg = f"""
+
+〽️ Powered By @T2Links
+
+Share and Support us❤️
+🎯 Join Now ☞ [Tamil Hd Movies](telegram.me/tamil_latest_films)
+""" 
+
 @Client.on_message(filters.command("start"))
 async def start(bot, cmd):
     usr_cmdall1 = cmd.text
@@ -53,7 +61,7 @@ async def start(bot, cmd):
             ident, file_id = cmd.text.split("_-_-_-_")
             filedetails = await get_file_details(file_id)
             for files in filedetails:
-                file_caption = files.caption
+                file_caption = f"{files.file_name} {sample_msg}"
                 buttons = [
                     [
                         InlineKeyboardButton('Search again', switch_inline_query_current_chat=''),
