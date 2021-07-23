@@ -7,6 +7,12 @@ from pyrogram.errors import UserNotParticipant
 from utils import get_filter_results, get_file_details, is_subscribed
 BUTTONS = {}
 
+sample_msg = f"""
+〽️ Powered By @T2Links
+Share and Support us❤️
+🎯 Join Now ☞ [Tamil Hd Movies](t.me/tamil_latest_films)
+"""   
+
 @Client.on_message(filters.text & filters.private & filters.incoming & filters.user(AUTH_USERS) if AUTH_USERS else filters.text & filters.private & filters.incoming)
 async def filter(client, message):
     if message.text.startswith("/"):
@@ -269,9 +275,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
             for files in filedetails:
                 file_caption = files.file_name
                 size=files.file_size
-                caption = files.caption
+                caption = files.caption + sample_msg
                 if caption is None:
-                    caption = f"{files.file_name}"
+                    caption = caption = files.file_name + sample_msg
                 buttons = [
                     [
                         InlineKeyboardButton('More Bots', url='https://t.me/subin_works/122'),
@@ -283,7 +289,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 await client.send_cached_media(
                     chat_id=query.from_user.id,
                     file_id=file_id,
-                    caption=caption,
+                    caption = files.file_name + sample_msg,
                     reply_markup=InlineKeyboardMarkup(buttons)
                     )
         elif query.data.startswith("checksub"):
@@ -295,9 +301,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
             for files in filedetails:
                 file_caption = files.file_name
                 size=files.file_size
-                caption = files.caption
+                caption = files.caption + sample_msg
                 if caption is None:
-                    caption = f"{files.file_name}"
+                    caption = files.file_name + sample_msg
                 buttons = [
                     [
                         InlineKeyboardButton('More Bots', url='https://t.me/subin_works/122'),
@@ -309,7 +315,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 await client.send_cached_media(
                     chat_id=query.from_user.id,
                     file_id=file_id,
-                    caption=caption,
+                    caption = files.file_name + sample_msg,
                     reply_markup=InlineKeyboardMarkup(buttons)
                     )
 
