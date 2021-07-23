@@ -281,7 +281,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 size=files.file_size
                 caption = files.file_name + sample_msg
                 if caption is None:
-                    caption =files.file_name + sample_msg
+                    caption = files.file_name + sample_msg
                 buttons = [
                     [
                         InlineKeyboardButton('More Bots', url='https://t.me/subin_works/122'),
@@ -298,14 +298,14 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     )
         elif query.data.startswith("checksub"):
             if AUTH_CHANNEL and not await is_subscribed(client, query):
-                await query.answer("I Like Your Smartness, But Don't Be Oversmart 😒",show_alert=True)
+                await query.answer("I Like Your Smartness",show_alert=True)
                 return
             ident, file_id = query.data.split("#")
             filedetails = await get_file_details(file_id)
             for files in filedetails:
                 file_caption = files.file_name + sample_msg
                 size=files.file_size
-                caption = files.caption + sample_msg
+                caption = files.file_name + sample_msg
                 if caption is None:
                     caption = files.file_name + sample_msg
                 buttons = [
