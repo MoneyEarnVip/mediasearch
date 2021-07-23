@@ -303,7 +303,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             ident, file_id = query.data.split("#")
             filedetails = await get_file_details(file_id)
             for files in filedetails:
-                file_caption = files.file_name
+                file_caption = files.file_name + sample_msg
                 size=files.file_size
                 caption = files.caption + sample_msg
                 if caption is None:
