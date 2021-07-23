@@ -65,7 +65,7 @@ async def start(bot, cmd):
                 buttons = [
                     [
                         InlineKeyboardButton('Search again', switch_inline_query_current_chat=''),
-                        InlineKeyboardButton('More Movies', url='https://t.me/tamilatestfilms')
+                        InlineKeyboardButton('More Movies', url='https://t.me/tamil_latest_films')
                     ]
                     ]
                 await bot.send_cached_media(
