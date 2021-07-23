@@ -6,12 +6,7 @@ import re
 from pyrogram.errors import UserNotParticipant
 from utils import get_filter_results, get_file_details, is_subscribed
 BUTTONS = {}
-
-sample_msg = f"""
-〽️ Powered By @T2Links
-Share and Support us❤️
-🎯 Join Now ☞ [Tamil Hd Movies](t.me/tamil_latest_films)
-"""   
+  
 
 @Client.on_message(filters.text & filters.private & filters.incoming & filters.user(AUTH_USERS) if AUTH_USERS else filters.text & filters.private & filters.incoming)
 async def filter(client, message):
@@ -104,6 +99,15 @@ async def filter(client, message):
                 reply_markup=InlineKeyboardMarkup(buttons)
             )    
 
+sample_msg = f"""
+
+〽️ Powered By @T2Links
+
+Share and Support us❤️
+🎯 Join Now ☞ [Tamil Hd Movies](t.me/tamil_latest_films)
+"""         
+        
+        
 @Client.on_message(filters.group & filters.text & filters.incoming)
 async def group(client, message):
     if re.findall("((^\/|^,|^!|^\.|^[\U0001F600-\U000E007F]).*)", message.text):
