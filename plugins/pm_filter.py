@@ -108,7 +108,7 @@ Share and Support us❤️
 """         
 disallowed_characters = "._!|"
 
-for file in files:
+for files in filedetails:
   disallowed_characters = "._!|"
   username = file.file_name
   
