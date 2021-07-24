@@ -279,7 +279,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             filedetails = await get_file_details(file_id)
             for files in filedetails:
                 disallowed_characters = "._!|"
-                username = file.file_name
+                username = files.file_name
             for character in disallowed_characters:
                 username = username.replace(character, " ")
                 username = username.replace("@", "")
