@@ -50,8 +50,7 @@ async def answer(bot, query):
                                                   offset=offset)
 
     for file in files:
-
-    username = file.file_name
+       username = file.file_name
     disallowed_characters = "._!"
     for character in disallowed_characters:
         username = username.replace(character, " ")
