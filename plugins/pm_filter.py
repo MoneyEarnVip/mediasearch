@@ -278,13 +278,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             ident, file_id = query.data.split("#")
             filedetails = await get_file_details(file_id)
             for files in filedetails:
-                disallowed_characters = "._!|"
-                username = files.file_name
-            for character in disallowed_characters:
-                username = username.replace(character, " ")
-                username = username.replace("@", "")
-                username = username.replace("mkv", "")
-                file_caption = f"<code>{username}</code> {sample_msg}"
+                file_caption = f"<code>{files.file_name}</code> {sample_msg}"
                 size=files.file_size
                 caption = f"<code>{files.file_name}</code> {sample_msg}"
                 if caption is None:
@@ -310,7 +304,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             ident, file_id = query.data.split("#")
             filedetails = await get_file_details(file_id)
             for files in filedetails:
-                file_caption = f"<code>{username}</code> {sample_msg}"
+                file_caption = f"<code>{files.file_name}</code> {sample_msg}"
                 size=files.file_size
                 caption = f"<code>{files.file_name}</code> {sample_msg}"
                 if caption is None:
