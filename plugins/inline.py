@@ -11,17 +11,7 @@ from info import CACHE_TIME, AUTH_USERS, AUTH_CHANNEL
 logger = logging.getLogger(__name__)
 cache_time = 0 if AUTH_USERS or AUTH_CHANNEL else CACHE_TIME
 
-sample_msg = f"""
 
-〽️ Powered By @T2Links
-
-Share and Support us❤️
-🎯 Join Now ☞ [Tamil Hd Movies](t.me/tamil_latest_films)
-"""  
-
-
-
-    
 @Client.on_inline_query(filters.user(AUTH_USERS) if AUTH_USERS else None)
 async def answer(bot, query):
     """Show search results for given inline query"""
@@ -50,16 +40,17 @@ async def answer(bot, query):
                                                   offset=offset)
 
     for file in files:
-        caption = f"<code>{file.file_name} {sample_msg}</code> "
-    if caption is None:
-        caption = f"<code>{file.file_name} {sample_msg}</code>"
-    results.append(
-        InlineQueryResultCachedDocument(
-            title=file.file_name,
-            file_id=file.file_id,
-            caption=f"<code>{file.file_name} {sample_msg}</code> ",
-            description=f'Size: {get_size(file.file_size)}\nType: {file.file_type}',
-            reply_markup=reply_markup))
+        caption=f"<code>{file.file_name} {sample_msg}</code>
+        if caption is None:
+            caption=caption
+        results.append(
+            InlineQueryResultCachedDocument(
+                title=file.file_name,
+                file_id=file.file_id,
+                caption=caption,
+                description=f'Size: {get_size(file.file_size)}\nType: {file.file_type}',
+                reply_markup=reply_markup))
+
     if results:
         switch_pm_text = f"{emoji.FILE_FOLDER} Results"
         if string:
@@ -88,7 +79,7 @@ def get_reply_markup(query):
     buttons = [
         [
             InlineKeyboardButton('Search again', switch_inline_query_current_chat=query),
-            InlineKeyboardButton('More Bots', url='https://t.me/subin_works/122')
+            InlineKeyboardButton('More Bots', url='https://t.me/t2links')
         ]
         ]
     return InlineKeyboardMarkup(buttons)
