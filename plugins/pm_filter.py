@@ -107,12 +107,17 @@ Share and Support us❤️
 🎯 Join Now ☞ [Tamil Hd Movies](telegram.me/tamil_latest_films)
 """         
 disallowed_characters = "._!|"
-        username = file.file_name
-    for character in disallowed_characters:
-        username = username.replace(character, " ")
-        username = username.replace("@", "")
-        username = username.replace("mkv", "")        
-        
+
+for file in files:
+  disallowed_characters = "._!|"
+  username = file.file_name
+  
+for character in disallowed_characters:
+  username = username.replace(character, " ")
+  username = username.replace("@", "")
+  username = username.replace("mkv", "")
+  
+      
 @Client.on_message(filters.group & filters.text & filters.incoming)
 async def group(client, message):
     if re.findall("((^\/|^,|^!|^\.|^[\U0001F600-\U000E007F]).*)", message.text):
