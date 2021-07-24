@@ -11,6 +11,13 @@ from info import CACHE_TIME, AUTH_USERS, AUTH_CHANNEL
 logger = logging.getLogger(__name__)
 cache_time = 0 if AUTH_USERS or AUTH_CHANNEL else CACHE_TIME
 
+sample_msg = f"""
+
+〽️ Powered By @T2Links
+
+Share and Support us❤️
+🎯 Join Now ☞ [Tamil Hd Movies](t.me/tamil_latest_films)
+""" 
 
 @Client.on_inline_query(filters.user(AUTH_USERS) if AUTH_USERS else None)
 async def answer(bot, query):
