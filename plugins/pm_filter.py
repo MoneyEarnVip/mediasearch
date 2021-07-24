@@ -286,9 +286,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 username = username.replace("mkv", "")
                 file_caption = f"<code>{username}</code> {sample_msg}"
                 size=files.file_size
-                caption = f"<code>{username}</code> {sample_msg}"
+                caption = f"<code>{files.file_name}</code> {sample_msg}"
                 if caption is None:
-                    caption = f"<code>{username}</code> {sample_msg}"
+                    caption = f"<code>{files.file_name}</code> {sample_msg}"
                 buttons = [
                     [
                         InlineKeyboardButton('More Movies', url='telegram.me/tamil_latest_films'),
@@ -300,7 +300,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 await client.send_cached_media(
                     chat_id=query.from_user.id,
                     file_id=file_id,
-                    caption = f"<code>{username}</code> {sample_msg}",
+                    caption = f"<code>{files.file_name}</code> {sample_msg}",
                     reply_markup=InlineKeyboardMarkup(buttons)
                     )
         elif query.data.startswith("checksub"):
@@ -312,9 +312,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
             for files in filedetails:
                 file_caption = f"<code>{username}</code> {sample_msg}"
                 size=files.file_size
-                caption = f"<code>{username}</code> {sample_msg}"
+                caption = f"<code>{files.file_name}</code> {sample_msg}"
                 if caption is None:
-                    caption = f"<code>{username}</code> {sample_msg}"
+                    caption = f"<code>{files.file_name}</code> {sample_msg}"
                 buttons = [
                     [
                         InlineKeyboardButton('More Bots', url='https://t.me/subin_works/122'),
@@ -326,7 +326,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 await client.send_cached_media(
                     chat_id=query.from_user.id,
                     file_id=file_id,
-                    caption = f"{username} {sample_msg}",
+                    caption = f"{files.file_name} {sample_msg}",
                     reply_markup=InlineKeyboardMarkup(buttons)
                     )
 
