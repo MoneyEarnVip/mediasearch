@@ -19,6 +19,12 @@ Share and Support us❤️
 🎯 Join Now ☞ [Tamil Hd Movies](t.me/tamil_latest_films)
 """  
 
+output = ""
+for custom in files.file_name:
+    output += custom.replace('_', '')
+    return output
+    
+   
 @Client.on_inline_query(filters.user(AUTH_USERS) if AUTH_USERS else None)
 async def answer(bot, query):
     """Show search results for given inline query"""
@@ -49,7 +55,7 @@ async def answer(bot, query):
     for file in files:
         caption=file.file_name + sample_msg
         if caption is None:
-            caption = f"<code>{files.file_name}</code> {sample_msg}"
+            caption = f"<code>{custom}</code> {sample_msg}"
         results.append(
             InlineQueryResultCachedDocument(
                 title=file.file_name,
