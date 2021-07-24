@@ -50,9 +50,9 @@ async def answer(bot, query):
                                                   offset=offset)
 
     for file in files:
+        disallowed_characters = "._!"
         username = file.file_name
     for character in disallowed_characters:
-        disallowed_characters = "._!"
         username = username.replace(character, " ")
         caption = f"<code>{username}</code> {sample_msg}"
     if caption is None:
