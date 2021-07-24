@@ -12,9 +12,7 @@ logger = logging.getLogger(__name__)
 cache_time = 0 if AUTH_USERS or AUTH_CHANNEL else CACHE_TIME
 
 sample_msg = f"""
-
 〽️ Powered By @T2Links
-
 Share and Support us❤️
 🎯 Join Now ☞ [Tamil Hd Movies](t.me/tamil_latest_films)
 """  
@@ -50,9 +48,9 @@ async def answer(bot, query):
                                                   offset=offset)
 
     for file in files:
-        disallowed_characters = "._!"
+       username = file.file_name
+    disallowed_characters = "._!"
     for character in disallowed_characters:
-        username = file.file_name
         username = username.replace(character, " ")
         caption = f"<code>{username}</code> {sample_msg}"
     if caption is None:
@@ -108,4 +106,3 @@ def get_size(size):
         i += 1
         size /= 1024.0
     return "%.2f %s" % (size, units[i])
-
