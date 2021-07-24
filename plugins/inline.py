@@ -54,7 +54,7 @@ async def answer(bot, query):
         username = file.file_name
     for character in disallowed_characters:
         username = username.replace(character, " ")
-        username = username.replace("@", "")
+        username = username.replace("@"'mkv', "")
         caption = f"<code>{username}</code> {sample_msg}"
     if caption is None:
         caption = f"<code>{username}</code> {sample_msg}"
