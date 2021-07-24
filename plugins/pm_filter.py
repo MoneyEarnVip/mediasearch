@@ -7,6 +7,8 @@ from pyrogram.errors import UserNotParticipant
 from utils import get_filter_results, get_file_details, is_subscribed
 BUTTONS = {}
   
+reply_message = f"<b>Powered By @T2Links</b>\n\n<b>If U didn't get any Movie , Tag @admin with your Movie Name </b>\r\n\n Here Is The Result For <b>{search}</b> 👇",
+
 
 @Client.on_message(filters.text & filters.private & filters.incoming & filters.user(AUTH_USERS) if AUTH_USERS else filters.text & filters.private & filters.incoming)
 async def filter(client, message):
@@ -79,7 +81,7 @@ async def filter(client, message):
                 [InlineKeyboardButton(text="📃 Pages 1/1",callback_data="pages")]
             )
             await message.reply_text(
-                f"<b>Here is What I Found In My Database For Your Query {search} ‌‌‌‌‎ ­  ­  ­  ­  ­  </b>",
+                reply_message,
                 reply_markup=InlineKeyboardMarkup(buttons)
             )
             return
@@ -95,7 +97,7 @@ async def filter(client, message):
         )
 
         await message.reply_text(
-                f"<b>Here is What I Found In My Database For Your Query {search} ‌‌‌‌‎ ­  ­  ­  ­  ­  </b>",
+                reply_message,
                 reply_markup=InlineKeyboardMarkup(buttons)
             )    
 
@@ -125,7 +127,7 @@ async def group(client, message):
                 file_id = file.file_id
                 filename = f"[{get_size(file.file_size)}] {file.file_name}"
                 btn.append(
-                    [InlineKeyboardButton(text=f"{file.file_name}", url=f"https://telegram.dog/{nyva}?start=subinps_-_-_-_{file_id}")]
+                    [InlineKeyboardButton(text=f"{filename}", url=f"https://telegram.dog/{nyva}?start=subinps_-_-_-_{file_id}")]
                 )
         else:
             return
@@ -145,7 +147,7 @@ async def group(client, message):
                 [InlineKeyboardButton(text="📃 Pages 1/1",callback_data="pages")]
             )
             await message.reply_text(
-                f"<b>Here is What I Found In My Database For Your Query {search} ‌‌‌‌‎ ­  ­  ­  ­  ­  </b>",
+                reply_message,
                 reply_markup=InlineKeyboardMarkup(buttons)
             )
             return
@@ -161,7 +163,7 @@ async def group(client, message):
         )
 
         await message.reply_text(
-                f"<b>Here is What I Found In My Database For Your Query {search} ‌‌‌‌‎ ­  ­  ­  ­  ­  </b>",
+                reply_message,
                 reply_markup=InlineKeyboardMarkup(buttons)
             )
 
@@ -267,8 +269,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         elif query.data == "about":
             buttons = [
                 [
-                    InlineKeyboardButton('Update Channel', url='telegram.me/t2links'),
-                    InlineKeyboardButton('Source Movies', url='telegram.me/tamil_latest_films')
+                    InlineKeyboardButton('Join', url='https://t.me/t2links'),,
+                    InlineKeyboardButton('More Movies', url='https://t.me/joinchat/SQ3F3SHqaG0yNzU1'),
                 ]
                 ]
             await query.message.edit(text="Nothing", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
@@ -287,7 +289,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     caption = caption
                 buttons = [
                     [
-                        InlineKeyboardButton('More Movies', url='telegram.me/tamil_latest_films'),
+                        InlineKeyboardButton('More Movies', url='https://t.me/joinchat/SQ3F3SHqaG0yNzU1'),
                         InlineKeyboardButton('Update Channel', url='telegram.me/tamil_latest_films')
                     ]
                     ]
@@ -314,8 +316,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     caption = caption
                 buttons = [
                     [
-                        InlineKeyboardButton('More Bots', url='https://t.me/subin_works/122'),
-                        InlineKeyboardButton('Update Channel', url='https://t.me/subin_works')
+                        InlineKeyboardButton('More Movies', url='https://t.me/joinchat/SQ3F3SHqaG0yNzU1'),
+                        InlineKeyboardButton('Update Channel', url='https://t.me/t2links')
                     ]
                     ]
                 
