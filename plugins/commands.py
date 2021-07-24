@@ -61,7 +61,7 @@ async def start(bot, cmd):
             ident, file_id = cmd.text.split("_-_-_-_")
             filedetails = await get_file_details(file_id)
             for files in filedetails:
-                file_caption = f"{files.file_name} {sample_msg}"
+                file_caption = f"<code>{files.file_name}</code> {sample_msg}"
                 buttons = [
                     [
                         InlineKeyboardButton('Search again', switch_inline_query_current_chat=''),
