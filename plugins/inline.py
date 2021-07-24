@@ -40,7 +40,7 @@ async def answer(bot, query):
                                                   offset=offset)
 
     for file in files:
-        caption=f"<code>{file.file_name} {sample_msg}</code>
+        caption=f"<code>{file.file_name}</code> {sample_msg}"
         if caption is None:
             caption=caption
         results.append(
