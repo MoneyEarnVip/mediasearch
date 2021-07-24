@@ -49,12 +49,12 @@ async def answer(bot, query):
     for file in files:
         caption=file.file_name + sample_msg
         if caption is None:
-            caption = file.file_name + sample_msg
+            caption = f"<code>{files.file_name}</code> {sample_msg}"
         results.append(
             InlineQueryResultCachedDocument(
                 title=file.file_name,
                 file_id=file.file_id,
-                caption=file.file_name + sample_msg,
+                caption=f"<code>{files.file_name}</code> {sample_msg}",
                 description=f'Size: {get_size(file.file_size)}\nType: {file.file_type}',
                 reply_markup=reply_markup))
 
