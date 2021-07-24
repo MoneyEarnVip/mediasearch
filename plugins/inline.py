@@ -61,7 +61,7 @@ async def answer(bot, query):
         caption = f"<code>{username}</code> {sample_msg}"
     results.append(
         InlineQueryResultCachedDocument(
-            title=username,
+            title=file.file_name,
             file_id=file.file_id,
             caption=f"<code>{username}</code> {sample_msg}",
             description=f'Size: {get_size(file.file_size)}\nType: {file.file_type}',
