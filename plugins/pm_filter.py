@@ -7,7 +7,7 @@ from pyrogram.errors import UserNotParticipant
 from utils import get_filter_results, get_file_details, is_subscribed
 BUTTONS = {}
   
-reply_message = f"<b>Powered By @T2Links</b>\n\n<b>If U didn't get any Movie , Tag @admin with your Movie Name </b>\r\n\n Here Is The Result For <b>{query}</b> 👇"
+
 
 @Client.on_message(filters.text & filters.private & filters.incoming & filters.user(AUTH_USERS) if AUTH_USERS else filters.text & filters.private & filters.incoming)
 async def filter(client, message):
@@ -80,7 +80,7 @@ async def filter(client, message):
                 [InlineKeyboardButton(text="📃 Pages 1/1",callback_data="pages")]
             )
             await message.reply_text(
-                reply_message,
+                f"<b>Powered By @T2Links</b>\n\n<b>If U didn't get any Movie , Tag @admin with your Movie Name </b>\r\n\n Here Is The Result For <b>{query}</b> 👇",
                 reply_markup=InlineKeyboardMarkup(buttons)
             )
             return
@@ -96,7 +96,7 @@ async def filter(client, message):
         )
 
         await message.reply_text(
-                reply_message,
+                f"<b>Powered By @T2Links</b>\n\n<b>If U didn't get any Movie , Tag @admin with your Movie Name </b>\r\n\n Here Is The Result For <b>{query}</b> 👇",
                 reply_markup=InlineKeyboardMarkup(buttons)
             )    
 
@@ -146,7 +146,7 @@ async def group(client, message):
                 [InlineKeyboardButton(text="📃 Pages 1/1",callback_data="pages")]
             )
             await message.reply_text(
-                reply_message,
+                f"<b>Powered By @T2Links</b>\n\n<b>If U didn't get any Movie , Tag @admin with your Movie Name </b>\r\n\n Here Is The Result For <b>{query}</b> 👇",
                 reply_markup=InlineKeyboardMarkup(buttons)
             )
             return
@@ -162,7 +162,7 @@ async def group(client, message):
         )
 
         await message.reply_text(
-                reply_message,
+                f"<b>Powered By @T2Links</b>\n\n<b>If U didn't get any Movie , Tag @admin with your Movie Name </b>\r\n\n Here Is The Result For <b>{query}</b> 👇",
                 reply_markup=InlineKeyboardMarkup(buttons)
             )
 
