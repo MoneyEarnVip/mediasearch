@@ -289,7 +289,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 buttons = [
                     [
                         InlineKeyboardButton('More Movies', url='https://t.me/joinchat/SQ3F3SHqaG0yNzU1'),
-                        InlineKeyboardButton('Update Channel', url='telegram.me/tamil_latest_films')
+                        InlineKeyboardButton('Join', url='telegram.me/tamil_latest_films')
                     ]
                     ]
                 
@@ -316,7 +316,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 buttons = [
                     [
                         InlineKeyboardButton('More Movies', url='https://t.me/joinchat/SQ3F3SHqaG0yNzU1'),
-                        InlineKeyboardButton('Update Channel', url='https://t.me/t2links')
+                        InlineKeyboardButton('Join', url='https://t.me/t2links')
                     ]
                     ]
                 
