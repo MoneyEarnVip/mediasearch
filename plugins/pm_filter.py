@@ -279,8 +279,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
             filedetails = await get_file_details(file_id)
             for files in filedetails:
                 username = files.file_name
-            for character in disallowed_characters:
                 disallowed_characters = "._"
+            for character in disallowed_characters:
                 username = username.replace(character, " ")
                 caption = f"<code>{username}</code> {sample_msg}"
                 file_caption = caption
@@ -310,8 +310,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
             filedetails = await get_file_details(file_id)
             for files in filedetails:
                 username = files.file_name
-            for character in disallowed_characters:
                 disallowed_characters = "._"
+            for character in disallowed_characters:
                 username = username.replace(character, " ")
                 caption = f"<code>{username}</code> {sample_msg}"
                 file_caption = caption
