@@ -52,7 +52,6 @@ async def answer(bot, query):
                                                   offset=offset)
 
     for file in files:
-        file.file_name = 
         caption=f"<code>{file.file_name}</code> {sample_msg}"
         if caption is None:
             caption = f"<code>{file.file_name}</code> {sample_msg}"
