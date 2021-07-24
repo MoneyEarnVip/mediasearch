@@ -19,10 +19,8 @@ Share and Support us❤️
 🎯 Join Now ☞ [Tamil Hd Movies](t.me/tamil_latest_films)
 """  
 
-disallowed_characters = "._!"
-for file in files:
-	for character in disallowed_characters:
-		username = file.file_name.replace(character, " ")
+
+
     
 @Client.on_inline_query(filters.user(AUTH_USERS) if AUTH_USERS else None)
 async def answer(bot, query):
@@ -52,7 +50,11 @@ async def answer(bot, query):
                                                   offset=offset)
 
     for file in files:
-        caption=f"<code>{file.file_name}</code> {sample_msg}"
+	username = file.file_name
+	disallowed_characters = "._!"
+	for character in disallowed_characters:
+	username = username.replace(character, " ")	
+        caption=f"<code>{username}</code> {sample_msg}"
         if caption is None:
             caption = f"<code>{file.file_name}</code> {sample_msg}"
         results.append(
