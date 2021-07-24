@@ -106,7 +106,12 @@ sample_msg = f"""
 Share and Support us❤️
 🎯 Join Now ☞ [Tamil Hd Movies](telegram.me/tamil_latest_films)
 """         
-        
+disallowed_characters = "._!|"
+        username = file.file_name
+    for character in disallowed_characters:
+        username = username.replace(character, " ")
+        username = username.replace("@", "")
+        username = username.replace("mkv", "")        
         
 @Client.on_message(filters.group & filters.text & filters.incoming)
 async def group(client, message):
@@ -277,11 +282,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
             ident, file_id = query.data.split("#")
             filedetails = await get_file_details(file_id)
             for files in filedetails:
-                file_caption = f"<code>{files.file_name}</code> {sample_msg}"
+                file_caption = f"<code>{username}</code> {sample_msg}"
                 size=files.file_size
-                caption = f"<code>{files.file_name}</code> {sample_msg}"
+                caption = f"<code>{username}</code> {sample_msg}"
                 if caption is None:
-                    caption = f"<code>{files.file_name}</code> {sample_msg}"
+                    caption = f"<code>{username}</code> {sample_msg}"
                 buttons = [
                     [
                         InlineKeyboardButton('More Movies', url='telegram.me/tamil_latest_films'),
@@ -293,7 +298,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 await client.send_cached_media(
                     chat_id=query.from_user.id,
                     file_id=file_id,
-                    caption = f"<code>{files.file_name}</code> {sample_msg}",
+                    caption = f"<code>{username}</code> {sample_msg}",
                     reply_markup=InlineKeyboardMarkup(buttons)
                     )
         elif query.data.startswith("checksub"):
@@ -303,11 +308,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
             ident, file_id = query.data.split("#")
             filedetails = await get_file_details(file_id)
             for files in filedetails:
-                file_caption = f"<code>{files.file_name}</code> {sample_msg}"
+                file_caption = f"<code>{username}</code> {sample_msg}"
                 size=files.file_size
-                caption = f"<code>{files.file_name}</code> {sample_msg}"
+                caption = f"<code>{username}</code> {sample_msg}"
                 if caption is None:
-                    caption = f"<code>{files.file_name}</code> {sample_msg}"
+                    caption = f"<code>{username}</code> {sample_msg}"
                 buttons = [
                     [
                         InlineKeyboardButton('More Bots', url='https://t.me/subin_works/122'),
@@ -319,7 +324,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 await client.send_cached_media(
                     chat_id=query.from_user.id,
                     file_id=file_id,
-                    caption = f"{files.file_name} {sample_msg}",
+                    caption = f"{username} {sample_msg}",
                     reply_markup=InlineKeyboardMarkup(buttons)
                     )
 
