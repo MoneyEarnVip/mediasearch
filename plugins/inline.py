@@ -20,6 +20,7 @@ Share and Support us❤️
 """  
 
 output = ""
+for file in files
 for custom in files.file_name:
     output += custom.replace('_', '')
     print(output)
