@@ -106,16 +106,7 @@ sample_msg = f"""
 Share and Support us❤️
 🎯 Join Now ☞ [Tamil Hd Movies](telegram.me/tamil_latest_films)
 """         
-disallowed_characters = "._!|"
 
-for files in filedetails:
-  disallowed_characters = "._!|"
-  username = file.file_name
-  
-for character in disallowed_characters:
-  username = username.replace(character, " ")
-  username = username.replace("@", "")
-  username = username.replace("mkv", "")
   
       
 @Client.on_message(filters.group & filters.text & filters.incoming)
