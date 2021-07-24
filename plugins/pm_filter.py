@@ -269,7 +269,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         elif query.data == "about":
             buttons = [
                 [
-                    InlineKeyboardButton('Join', url='https://t.me/t2links'),,
+                    InlineKeyboardButton('Join', url='https://t.me/t2links'),
                     InlineKeyboardButton('More Movies', url='https://t.me/joinchat/SQ3F3SHqaG0yNzU1'),
                 ]
                 ]
