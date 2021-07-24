@@ -121,16 +121,11 @@ async def group(client, message):
         files = await get_filter_results(query=search)
         if files:
             for file in files:
-                
-                username = file.file_name
-                disallowed_characters = "._"
-            for character in disallowed_characters:
-                username = username.replace(character, " ")
-                caption = f"<code>{username}</code> {sample_msg}"
+                caption = f"<code>{file.file_name}</code> {sample_msg}"
                 file_id = file.file_id
-                filename = f"[{get_size(file.file_size)}] {username}"
+                filename = f"[{get_size(file.file_size)}] {file.file_name}"
                 btn.append(
-                    [InlineKeyboardButton(text=f"{username}", url=f"https://telegram.dog/{nyva}?start=subinps_-_-_-_{file_id}")]
+                    [InlineKeyboardButton(text=f"{file.file_name}", url=f"https://telegram.dog/{nyva}?start=subinps_-_-_-_{file_id}")]
                 )
         else:
             return
@@ -284,11 +279,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             ident, file_id = query.data.split("#")
             filedetails = await get_file_details(file_id)
             for files in filedetails:
-                username = files.file_name
-                disallowed_characters = "._"
-            for character in disallowed_characters:
-                username = username.replace(character, " ")
-                caption = f"<code>{username}</code> {sample_msg}"
+                caption = f"<code>{files.file_name}</code> {sample_msg}"
                 file_caption = caption
                 size=files.file_size
                 caption = caption
@@ -315,16 +306,12 @@ async def cb_handler(client: Client, query: CallbackQuery):
             ident, file_id = query.data.split("#")
             filedetails = await get_file_details(file_id)
             for files in filedetails:
-                username = files.file_name
-                disallowed_characters = "._"
-            for character in disallowed_characters:
-                username = username.replace(character, " ")
-                caption = f"<code>{username}</code> {sample_msg}"
-                file_caption = f"<code>{files.file_name}</code> {sample_msg}"
-                size=files.file_size
                 caption = f"<code>{files.file_name}</code> {sample_msg}"
+                file_caption = caption
+                size=files.file_size
+                caption = caption
                 if caption is None:
-                    caption =f"<code>{files.file_name}</code> {sample_msg}"
+                    caption = caption
                 buttons = [
                     [
                         InlineKeyboardButton('More Bots', url='https://t.me/subin_works/122'),
