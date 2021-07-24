@@ -278,7 +278,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
             ident, file_id = query.data.split("#")
             filedetails = await get_file_details(file_id)
             for files in filedetails:
-                caption = f"<code>{files.file_name}</code> {sample_msg}"
+                username = file.file_name
+            for character in disallowed_characters:
+                disallowed_characters = "._"
+                username = username.replace(character, " ")
+                caption = f"<code>{username}</code> {sample_msg}"
                 file_caption = caption
                 size=files.file_size
                 caption = caption
@@ -305,7 +309,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
             ident, file_id = query.data.split("#")
             filedetails = await get_file_details(file_id)
             for files in filedetails:
-                caption = f"<code>{files.file_name}</code> {sample_msg}"
+                username = file.file_name
+            for character in disallowed_characters:
+                disallowed_characters = "._"
+                username = username.replace(character, " ")
+                caption = f"<code>{username}</code> {sample_msg}"
                 file_caption = caption
                 size=files.file_size
                 caption = caption
