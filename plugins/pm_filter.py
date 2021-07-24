@@ -278,11 +278,12 @@ async def cb_handler(client: Client, query: CallbackQuery):
             ident, file_id = query.data.split("#")
             filedetails = await get_file_details(file_id)
             for files in filedetails:
-                file_caption = f"<code>{files.file_name}</code> {sample_msg}"
-                size=files.file_size
                 caption = f"<code>{files.file_name}</code> {sample_msg}"
+                file_caption = caption
+                size=files.file_size
+                caption = caption
                 if caption is None:
-                    caption = f"<code>{files.file_name}</code> {sample_msg}"
+                    caption = caption
                 buttons = [
                     [
                         InlineKeyboardButton('More Movies', url='telegram.me/tamil_latest_films'),
@@ -304,11 +305,12 @@ async def cb_handler(client: Client, query: CallbackQuery):
             ident, file_id = query.data.split("#")
             filedetails = await get_file_details(file_id)
             for files in filedetails:
-                file_caption = f"<code>{files.file_name}</code> {sample_msg}"
-                size=files.file_size
                 caption = f"<code>{files.file_name}</code> {sample_msg}"
+                file_caption = caption
+                size=files.file_size
+                caption = caption
                 if caption is None:
-                    caption = f"<code>{files.file_name}</code> {sample_msg}"
+                    caption =caption
                 buttons = [
                     [
                         InlineKeyboardButton('More Bots', url='https://t.me/subin_works/122'),
