@@ -19,12 +19,11 @@ Share and Support us❤️
 🎯 Join Now ☞ [Tamil Hd Movies](t.me/tamil_latest_films)
 """  
 
-output = ""
-for file in files
-for custom in files.file_name:
-    output += custom.replace('_', '')
-    print(output)
-   
+disallowed_characters = "._!"
+
+for character in disallowed_characters:
+	username = file_name.replace(character, " ")
+    
 @Client.on_inline_query(filters.user(AUTH_USERS) if AUTH_USERS else None)
 async def answer(bot, query):
     """Show search results for given inline query"""
@@ -53,14 +52,15 @@ async def answer(bot, query):
                                                   offset=offset)
 
     for file in files:
-        caption=file.file_name + sample_msg
+        file.file_name = 
+        caption=f"<code>{file.file_name}</code> {sample_msg}"
         if caption is None:
-            caption = f"<code>{custom}</code> {sample_msg}"
+            caption = f"<code>{file.file_name}</code> {sample_msg}"
         results.append(
             InlineQueryResultCachedDocument(
                 title=file.file_name,
                 file_id=file.file_id,
-                caption=f"<code>{file.file_name}</code> {sample_msg}",
+                caption=f"<code>{username}</code> {sample_msg}",
                 description=f'Size: {get_size(file.file_size)}\nType: {file.file_type}',
                 reply_markup=reply_markup))
 
