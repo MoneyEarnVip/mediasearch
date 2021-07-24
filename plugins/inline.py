@@ -22,7 +22,7 @@ Share and Support us❤️
 disallowed_characters = "._!"
 
 for character in disallowed_characters:
-	username = file_name.replace(character, " ")
+	username = files.file_name.replace(character, " ")
     
 @Client.on_inline_query(filters.user(AUTH_USERS) if AUTH_USERS else None)
 async def answer(bot, query):
