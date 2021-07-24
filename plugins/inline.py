@@ -22,8 +22,7 @@ Share and Support us❤️
 output = ""
 for custom in files.file_name:
     output += custom.replace('_', '')
-    return output
-    
+    print(output)
    
 @Client.on_inline_query(filters.user(AUTH_USERS) if AUTH_USERS else None)
 async def answer(bot, query):
