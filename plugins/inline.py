@@ -16,7 +16,7 @@ sample_msg = f"""
 〽️ Powered By @T2Links
 
 Share and Support us❤️
-🎯 Join Now ☞ [Tamil Hd Movies](t.me/tamil_latest_films)
+🎯 Join Now ☞ @t2linkspublic
 """ 
 
 @Client.on_inline_query(filters.user(AUTH_USERS) if AUTH_USERS else None)
