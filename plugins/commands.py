@@ -9,10 +9,10 @@ logger = logging.getLogger(__name__)
 
 sample_msg = f"""
 
-〽️ Powered By @T2Links
+〽️ Powered By @DisneyHDLinks
 
 Share and Support us❤️
-🎯 Join Now ☞ [Tamil Hd Movies](telegram.me/tamil_latest_films)
+🎯 Join Now ☞ [Tamil Hd Movies](telegram.me/Disney_Dubbed_Movies)
 """ 
 
 @Client.on_message(filters.command("start"))
