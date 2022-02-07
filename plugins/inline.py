@@ -13,10 +13,10 @@ cache_time = 0 if AUTH_USERS or AUTH_CHANNEL else CACHE_TIME
 
 sample_msg = f"""
 
-〽️ Powered By @T2Links
+〽️ Powered By @DisneyHDLinks
 
 Share and Support us❤️
-🎯 Join Now ☞ @t2linkspublic
+🎯 Join Now ☞ @Disney_Dubbed_Movies
 """ 
 
 @Client.on_inline_query(filters.user(AUTH_USERS) if AUTH_USERS else None)
@@ -86,7 +86,7 @@ def get_reply_markup(query):
     buttons = [
         [
             InlineKeyboardButton('Search again', switch_inline_query_current_chat=query),
-            InlineKeyboardButton('More Movies', url='https://t.me/joinchat/SQ3F3SHqaG0yNzU1')
+            InlineKeyboardButton('More Movies', url='https://t.me/+WVQS9-fcGcdlZDZl')
         ]
         ]
     return InlineKeyboardMarkup(buttons)
