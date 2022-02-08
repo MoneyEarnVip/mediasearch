@@ -80,7 +80,7 @@ async def filter(client, message):
                 [InlineKeyboardButton(text="📃 Pages 1/1",callback_data="pages")]
             )
             await message.reply_text(
-                f"<b>Powered By @T2Links</b>\n\n<b>If U didn't get any Movie , Tag @admin with your Movie Name </b>\r\n\n Here Is The Result For <b>{search}</b> 👇",
+                f"<b>Created By @DisneyHDLinks</b>\n\n<b>If U didn't get any Movie , Tag @admin with your Movie Name </b>\r\n\n Here Is The Result For <b>{search}</b> 👇",
                 reply_markup=InlineKeyboardMarkup(buttons)
             )
             return
@@ -96,16 +96,16 @@ async def filter(client, message):
         )
 
         await message.reply_text(
-                f"<b>Powered By @T2Links</b>\n\n<b>If U didn't get any Movie , Tag @admin with your Movie Name </b>\r\n\n Here Is The Result For <b>{search}</b> 👇",
+                f"<b>Created By @DisneyHDLinks</b>\n\n<b>If U didn't get any Movie , Tag @admin with your Movie Name </b>\r\n\n Here Is The Result For <b>{search}</b> 👇",
                 reply_markup=InlineKeyboardMarkup(buttons)
             )    
 
 sample_msg = f"""
 
-〽️ Powered By @T2Links
+🎬 Created By @DisneyHDLinks
 
 Share and Support us❤️
-🎯 Join Now ☞ [Tamil Hd Movies](telegram.me/tamil_latest_films)
+Join Now 👉 [Tamil Hd Movies](telegram.me/Disney_dubbed_movies)
 """         
 
   
@@ -146,7 +146,7 @@ async def group(client, message):
                 [InlineKeyboardButton(text="📃 Pages 1/1",callback_data="pages")]
             )
             await message.reply_text(
-                f"<b>Powered By @T2Links</b>\n\n<b>If U didn't get any Movie , Tag @admin with your Movie Name </b>\r\n\n Here Is The Result For <b>{search}</b> 👇",
+                f"<b>Created By @DisneyHDLinks</b>\n\n<b>If U didn't get any Movie , Tag @admin with your Movie Name </b>\r\n\n Here Is The Result For <b>{search}</b> 👇",
                 reply_markup=InlineKeyboardMarkup(buttons)
             )
             return
@@ -162,7 +162,7 @@ async def group(client, message):
         )
 
         await message.reply_text(
-                f"<b>Powered By @T2Links</b>\n\n<b>If U didn't get any Movie , Tag @admin with your Movie Name </b>\r\n\n Here Is The Result For <b>{search}</b> 👇",
+                f"<b>Created By @DisneyHDLinks</b>\n\n<b>If U didn't get any Movie , Tag @admin with your Movie Name </b>\r\n\n Here Is The Result For <b>{search}</b> 👇",
                 reply_markup=InlineKeyboardMarkup(buttons)
             )
 
@@ -268,7 +268,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         elif query.data == "about":
             buttons = [
                 [
-                    InlineKeyboardButton('Join', url='https://t.me/t2links'),
+                    InlineKeyboardButton('Join', url='https://t.me/DisneyHDLinks'),
                     InlineKeyboardButton('More Movies', url='https://t.me/joinchat/SQ3F3SHqaG0yNzU1'),
                 ]
                 ]
@@ -289,7 +289,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 buttons = [
                     [
                         InlineKeyboardButton('More Movies', url='https://t.me/joinchat/SQ3F3SHqaG0yNzU1'),
-                        InlineKeyboardButton('Join', url='telegram.me/tamil_latest_films')
+                        InlineKeyboardButton('Join', url='telegram.me/Disney_Dubbed_Movies')
                     ]
                     ]
                 
@@ -316,7 +316,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 buttons = [
                     [
                         InlineKeyboardButton('More Movies', url='https://t.me/joinchat/SQ3F3SHqaG0yNzU1'),
-                        InlineKeyboardButton('Join', url='https://t.me/t2links')
+                        InlineKeyboardButton('Join', url='https://t.me/DisneyHDLinks')
                     ]
                     ]
                 
